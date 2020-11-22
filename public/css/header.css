@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech&display=swap');
+:root{
+    --sombra_clara:rgba(255,255,255,0.5);
+    --sobra_oscura:rgba(70,70,70,0.12);
+}
+
+.header_container{
+    display: grid;
+    grid-template-columns: 70vw 30vw;
+    box-shadow: 
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    height: 25vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 9; 
+    position: relative;
+    margin-bottom: 5vh;
+}
+.controles{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-column: 2/3;
+    margin: 5% 10%
+}
+.enlace_registro{
+    text-decoration: none;
+    margin-right: 5%;
+    padding: 2% 8%;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    color: rgba(175, 175, 175, 0.8);
+    cursor: pointer;
+    border: solid thin rgb(240, 240, 240);
+    border-radius: 5em;
+    box-shadow: 
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.2vw;
+   
+}
+.enlace_registro:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+}
+.enlace_registro:active svg{
+    fill: rgba(114, 246, 255, 1);
+}
+.enlace_registro:active{
+    box-shadow: 
+    inset -10px -10px 15px rgba(255,255,255,0.5),
+    inset 10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
+}
+
+.boton_sesion{
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    border-radius:  100%;
+    border: 0.1em solid rgb(240, 240, 240);
+    outline: none;
+    box-shadow: 
+     -10px -10px 15px rgba(255,255,255,0.5),
+     10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
+}
+.boton_sesion:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+}
+
+
+.boton_sesion:active{
+    box-shadow: 
+    inset -10px -10px 15px var(--sombra_clara),
+    inset 10px 10px 15px var(--sobra_oscura);
+    cursor: pointer;
+}
+
+svg{
+    fill: rgba(175, 175, 175, 0.8);
+}
+
+/*Página Formulario Inicio de Sesión*/
+.container_form{
+   display: none;
+    transform: translateY(-75vh);
+    width: 70vw;
+    margin: auto;
+    box-shadow: 
+        -10px -10px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 15px rgba(70,70,70,0.12);
+    border-left: 0.1em solid rgba(114, 246, 255, 0.65);
+    border-right: 0.1em solid rgba(114, 246, 255, 0.65);
+    border-bottom: 0.1em solid rgba(114, 246, 255, 0.65);
+    z-index: 4;
+    position: absolute;
+    left: 15vw;
+    top: 25vh;
+    background-color: white;
+}
+.formulario_sesion{
+    display: grid;
+    grid-template-rows: repeat(3, 25%);
+    width: 100%;
+
+}
+.formulario_sesion input{
+    display: block;
+    width: 60%;
+    height: 5vh;
+    margin: 5vh auto;
+    border:none;
+    border-bottom: solid thin rgba(114, 246, 255, 0.65);
+    text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+    color: rgba(105, 105, 105, 0.8);
+}
+
+.formulario_sesion input[type="submit"]{
+    appearance: none;
+    width: 20%;
+    height: 60%;
+    background-color: white;
+    border: thin solid rgba(114, 246, 255, 0.65);
+    border-radius:  5em;
+    box-shadow: 
+     -10px -10px 15px rgba(255,255,255,0.5),
+     10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
+}
+.formulario_sesion input[type="submit"]:active{
+
+    box-shadow: 
+     inset -10px -10px 15px rgba(255,255,255,0.5),
+     inset 10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
+}
+/* .separador{
+    height: 15vh;
+    background: linear-gradient(0, rgba(114, 246, 255, 0.85),rgba(114, 246, 255, 0.65), white);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+} */
+
+

@@ -1,0 +1,74 @@
+.container_page{
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 5vh;
+    justify-items: center;
+    width: 80vw;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+
+}
+.container_product{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    column-gap: 5%;
+    padding: 5%;
+}
+.container_enlace{
+    text-decoration: none;
+    color: black;
+   
+    box-sizing: border-box;
+    border-radius: 12%;
+    border: solid thin rgba(255, 255, 255, 0.65);
+    box-shadow: 
+    -10px -10px 15px rgba(255, 255, 255, 0.25),
+    5px -5px 15px rgba(114, 246, 255, 0.25);
+}
+.container_enlace:hover{
+    transition: all ease-in 0.3s;
+    border: solid thin rgba(114, 246, 255, 0.65);
+    box-shadow: 
+    -10px -10px 15px rgba(255, 255, 255, 0.25),
+    10px 10px 15px rgba(70,70,70,0.12),
+    5px -5px 15px rgba(114, 246, 255, 0.25);
+}
+.product_img{
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+.product_img img{
+    width: 90%;
+}
+
+.valoracion{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+    line-height: .2em;
+    
+}
+.puntuacion{
+    font-size:6vw;
+}
+.votaciones{
+    font-size: 4vw;
+}
+.descripcion{
+    grid-column: 1/3;
+    grid-row: 3/5;
+    font-size: 4vw;
+    text-align: justify;
+    padding: 5%;
+    margin-top: 2%;
+
+}
+.nombre{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 5vw;
+    text-align: center;
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech&display=swap');
+/* body{
+    background-image: url("/img/fondo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+.container_page_view{
+    display: grid;
+    row-gap: 5vh;
+    justify-items: center;
+    width: 60vw;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10vh;
+}
+.nombre_product_view{
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'Electrolize', sans-serif;
+}
+
+.container_product_view{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    column-gap: 5vw;
+    row-gap: 10vh;
+    padding: 5%;
+}
+.product_img_view{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.product_img_view img{
+    width: 100%;
+}
+.container_valoracion{
+    grid-row: 1/2;
+    height: 30vh;
+}
+.valoracion_view{
+    grid-column: 2/3;
+    text-align: center;
+    line-height: 0.2em;
+    padding: 5%;
+}
+.puntuacion_view{
+    font-family: 'Electrolize', sans-serif;
+    font-size:3.5vw;
+}
+.votaciones_view{
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.2vw;
+}
+.respuesta{
+    text-align: center;
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.3vw;
+    height: 15vh;
+}
+.container_votacion_view{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.form_valoracion{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: .5vw;
+    align-items: center;
+}
+.container_radio{
+    display: flex;
+}
+.afirmativa{
+    color: green;
+}
+.negativa{
+    color: red;
+}
+.container_radio input{
+    position: relative;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.checkmark{
+    position: relative;
+}
+.checkmark svg{
+    width: 3vw;
+    height: 3vw;
+    fill:rgba(158, 158, 158, 0.5);
+    transition: all .2s ease;
+}
+.checkmark svg:hover{
+    fill:rgba(114, 246, 255, 0.8);
+    filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
+    cursor: pointer;
+}
+.container_radio input:checked  ~ .checkmark svg{
+    transform: scale(115%);
+    filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
+    fill: rgba(114, 246, 255, 1);
+}
+
+
+.descripcion_view{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    font-size: 1.4vw;
+    text-align: justify;
+    font-family: 'Share Tech', sans-serif;
+}   
+
+
+
