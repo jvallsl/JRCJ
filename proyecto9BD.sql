@@ -40,7 +40,7 @@ CREATE TABLE `comentario` (
 
 --
 -- Volcado de datos para la tabla `comentario`
---
+-- 
 
 INSERT INTO `comentario` (`NumComentario`, `Contenido`, `Fecha`, `UsuarioId`, `ProductoId`) VALUES
 (1, 'Es una bicicleta espectacular.', '2020-04-07', 1, 1),
