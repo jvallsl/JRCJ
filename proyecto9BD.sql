@@ -57,6 +57,7 @@ CREATE TABLE `producto` (
   `ProductoId` int(11) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Descripcion` varchar(150) NOT NULL,
+  `Foto` text NOT NULL,
   `SeccionId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -64,13 +65,12 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`ProductoId`, `Nombre`, `Descripcion`, `SeccionId`) VALUES
-(1, 'Bicicleta eléctrica MY-SM26 Samebike', 'Aleación de aluminio 6061, 220-240V, 170 * 67 * 102 cm / 66.9 * 26.4 * 40.2in; Altura ajustable: 82-102cm / 32.3-40.2in; Max. Velocidad: 30 km / h; Rango eléctrico puro: 35-40 km; Rango de asistencia de energía: 70-80 km; Tamaño de la rueda: 26.0 * 1.95in
-Max. Carga: 150 kg / 330 lb; Capacidad de la batería: 48V 8AH 2000mah 13S4P 18650 batería de litio; Motor: 350W; Tensión nominal del motor: 384WH; Tiempo de carga: 4-6 horas; Freno: freno de disco doble delantero; Peso del paquete: aprox. 25kg / 881.8oz
-', 1),
-(2, 'Patinete eléctrico Bongo Serie Z Blue', 'Patinete eléctrico capaz de subir pendientes gracias a una potencia nominal de 500 W y máxima de hasta 1100 W, para uso urbano con unas sensaciones increíbles. Batería extraíble de larga duración con autonomía de hasta 45 km. Máxima potencia y velocidad de hasta 25 km/h; Ordenador de abordo que muestra los kilómetros, la velocidad y la batería. Además marca el estado y configuración del patinete. Neumáticos Tubeless XL de 12pl de competición preparados para un uso intensivo. Doble disco de freno: delantero y trasero para una seguridad extrema. Tiempo de carga entre 5 y 6 horas para tenerlo siempre listo para el uso.', 2),
-(3, 'Car2go', 'Empresa para uso temporal o préstamo de vehículos. Tiene en Austria, Dinamarca, Francia, Hungría, Países Bajos, Alemania, Italia y España. Salvo Alemania e Italia, sólo tiene hoy por hoy servicio en las capitales', 3);
-
+INSERT INTO `producto` (`ProductoId`, `Nombre`, `Descripcion`, `Foto`, `SeccionId`) VALUES
+(1, 'xioami m365', 'fds', 'foto1.jpg', 2),
+(2, 'BMW i3', 'BMW i3', 'foto2.jpg', 2),
+(3, 'xioami m365 pro', 'm365', 'foto3.jpg', 2),
+(4, 'QICYCLE EF1 c', ' XIAOMI QICYCLE EF1 c', 'foto4.jpg', 1),
+(5, 'soonerbike', 'soonerbike', 'foto5.jpg', 1);
 
 -- --------------------------------------------------------
 
