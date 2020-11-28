@@ -43,6 +43,13 @@ $routes->get('seccion/(:segment)', 'Seccion::index/$1');
 $routes->get('home', 'Home::index');
 $routes->get('home/pruebas', 'Home::pruebas');
 
+$routes->group('user', function($routes)
+{
+	$routes->resource('Usuario');
+  //    $routes->get('altaUsuario', 'AltaUsuario::index');
+  //	$routes->get('altaUsuario/consulta', 'AltaUsuario::consulta');
+  //	$routes->get('altaUsuario/create', 'AltaUsuario::create');
+});
 
 /**
  * --------------------------------------------------------------------
