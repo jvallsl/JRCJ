@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
-use App\Models\ProductoModel;
-use App\Models\UserModel;
+    use App\Models\ProductoModel;
+    use App\Models\UserModel;
     use CodeIgniter\Controller;
     use CodeIgniter\Model;
 
@@ -69,8 +69,8 @@ class Usuario extends BaseController{
 
         if($this->request->getMethod() == 'post'){
             $userName = $_POST['username'];
-            $pass = $_POST['contrasena'];
-            $user = $this->model->login($userName, $pass);
+            $password = $_POST['contrasena'];
+            $user = $this->model->login($userName, $password);
 
             if(isset($user)){
           
@@ -84,7 +84,42 @@ class Usuario extends BaseController{
     }
 
     public function perfil(){
+
         echo view('users/perfil');
     }
-}
 
+
+    public function userUpdate(){
+
+        if($this->request->getMethod() == 'post'){
+            
+            $usuarioId = $_POST['usuarioId'];
+            if( isset($_POST['username']) ){
+                
+                $nombre = $_POST['username'];
+                $this->model->modificar($nombre, $usuarioId);
+                return redirect()->to('/usuario/perfil');
+            }
+
+            if( isset($_POST['email']) ){
+
+                $email = $_POST['email'];
+                $this->model->modificar($email, $usuarioId);
+                return redirect()->to('/usuario/perfil');
+            }
+
+            if(isset($_POST['contrasena'])){
+                $password = $_POST['contrasena'] ;
+                $this->model->modificar($password, $usuarioId);
+                return redirect()->to('/usuario/perfil');
+            }
+
+            if(isset($_POST['estadoUsuario'])){
+                $estado = $_POST['estadoUsuario'] ;
+                $this->model->modificar($estado, $usuarioId);
+                session()->destroy();
+                return redirect()->to('/');
+            }
+        }
+    }
+}

@@ -64,5 +64,12 @@
 
         }
 
+
+        public function getValoraciones($usuarioId){
+            $valoraciones= $this->builder()->select('Puntuacion')
+            ->where('UsuarioId', $usuarioId)->countAllResults();
+
+            return $valoraciones;
+        }
         
     }
