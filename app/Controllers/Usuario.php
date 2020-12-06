@@ -15,7 +15,7 @@ class Usuario extends BaseController{
     }
 
     public function index(){
-        
+
         $data = [
             'usuario' => $this->model->getUsers(),
             'title' => 'Usuarios Registrados',
@@ -27,7 +27,7 @@ class Usuario extends BaseController{
     }
 
     public function view($userName = NULL){
-        
+
         $data['usuario'] = $this->model->getUsers($userName);
 
         if(empty($data['usuario'])){
@@ -44,15 +44,15 @@ class Usuario extends BaseController{
     public function create(){
 
         if($this->request->getMethod() === 'post' && $this->validate([
-            'username' => 'required',
+            'usario' => 'required',
             'email' => 'required',
-            'contrasena' => 'required'
+            'pass' => 'required'
         ])){
 
             $this->model->save([
-                'Username' => $this->request->getPost('username'),
+                'Username' => $this->request->getPost('usuario'),
                 'Email' => $this->request->getPost('email'),
-                'Contrasena' => $this->request->getPost('contrasena'),
+                'Contrasena' => $this->request->getPost('pass'),
             ]);
 
             echo view('users/success');
@@ -73,9 +73,9 @@ class Usuario extends BaseController{
             $user = $this->model->login($userName, $password);
 
             if(isset($user)){
-          
+
                 return redirect()->to('/');
-    
+
             }else{
                 echo "No existe";
             }
@@ -92,10 +92,10 @@ class Usuario extends BaseController{
     public function userUpdate(){
 
         if($this->request->getMethod() == 'post'){
-            
+
             $usuarioId = $_POST['usuarioId'];
             if( isset($_POST['username']) ){
-                
+
                 $nombre = $_POST['username'];
                 $this->model->modificar($nombre, $usuarioId);
                 return redirect()->to('/usuario/perfil');
