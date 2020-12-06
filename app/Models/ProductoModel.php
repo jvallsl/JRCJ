@@ -3,7 +3,7 @@
     use CodeIgniter\Model;
 
 class ProductoModel extends Model{
-        
+
         protected $table = 'producto';
         protected $primaryKey = 'ProductoId';
         protected $allowedField = ['Nombre', 'Descripcion', 'Imagen', 'SeccionId'];
@@ -13,7 +13,7 @@ class ProductoModel extends Model{
 
             $producto_array = $this->findAll();
             return $producto_array;
-         
+
         }
 
         public function getProducto($productoId){
@@ -27,7 +27,7 @@ class ProductoModel extends Model{
             $productoId = $this->builder()->select('ProductoId')
             ->get()->getResultArray();
             return $productoId;
-            
+
         }
 
         public function getProductosBySeccion($seccion){
@@ -35,5 +35,17 @@ class ProductoModel extends Model{
             ->where(['SeccionId'=> $seccion])->findAll();
             return $productos_seccion;
         }
-        
+
+        public function get($ProductoId = null)
+        {
+            if ($ProductoId === null)
+            {
+                return $this->findAll();
+            }
+
+            return $this->asArray()
+                        ->where(['ProductoId' => $ProductoId])
+                        ->first();
+        }
+
     }
