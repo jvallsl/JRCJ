@@ -1,19 +1,30 @@
 <h2><?= esc($title); ?></h2>
 
 <?= \Config\Services::validation()->listErrors(); ?>
-
-<form action="/users/create" method="post">
-    <?= csrf_field() ?>
-
-    <label for="username">Username</label>
-    <input type="input" name="username" /><br />
-
-    <label for="email">Email</label>
-    <input type="email" name="email"></input><br />
-
-    <label for="contrasena">Contraseña</label>
-    <input type="password" name="contrasena">
-
-    <input type="submit" name="submit" value="Create new User" />
-
-</form>
+<section>
+  <br><br>
+  <form id="formulario" action="/users/create" method="POST">
+      <?= csrf_field() ?>
+    <table id="tabla">
+      <tr class="usuario">
+        <td>
+          <label for="usuario">Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input type="text" id="usuario" name="usuario">
+        </td>
+        <td>
+          <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input type="email" id="email" name="email">
+        </td>
+      </tr>
+      <tr class="usuario">
+        <td>
+          <label for="pass">Contraseña:</label>
+          <input type="password" id="pass" name="pass">
+        </td>
+      </tr>
+    </table>
+    <br><br>
+    <p><input type="submit" value="Crear" name="submit" id="crear"></p>
+    <p><input type="reset" value="Cancelar" id="cancelar"></p>
+  </form>
+</section>
