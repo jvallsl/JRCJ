@@ -7,7 +7,7 @@
 
         protected $table = 'usuario';
         protected $primaryKey = "UsuarioId";
-        protected $allowedFields = ['Username', 'Contrasena', 'Email', 
+        protected $allowedFields = ['Username', 'Contrasena', 'Email',
         'Experiencia', 'Activo', 'Administrador'];
 
         public function getUsers($userName = false){
@@ -47,7 +47,7 @@
                 $vmodel = new ValoracionModel();
                 $valoraciones = $vmodel->getValoraciones($datos_usuario['UsuarioId']);
                 $session->set('valoraciones' , $valoraciones);
-    
+
                 return $datos_usuario;
             }else{
 
@@ -55,7 +55,7 @@
                 return $datos_usuario;
             }
 
-        
+
         }
 
         public function modificar($dato, $usuarioId){
@@ -90,6 +90,17 @@
                 return;
             }
         }
+        public function get($UsuarioId = null)
+          {
+              if ($UsuarioId === null)
+              {
+                  return $this->findAll();
+              }
+
+              return $this->asArray()
+                          ->where(['UsuarioId' => $UsuarioId])
+                          ->first();
+          }
     }
 
 ?>
