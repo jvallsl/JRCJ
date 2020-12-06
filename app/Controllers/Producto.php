@@ -25,7 +25,7 @@ class Producto extends BaseController{
     //     if(session('Username') != null){
     //         echo view('templates/header_loged');
     //     }else{
-    //         echo view('templates/header');   
+    //         echo view('templates/header');
     //     }
     //     echo view('productos/productos', $data);
     //     echo view('templates/footer');
@@ -44,7 +44,7 @@ class Producto extends BaseController{
         if(session('Username') != null){
             echo view('templates/header_loged');
         }else{
-            echo view('templates/header');   
+            echo view('templates/header');
         }
         echo view('productos/product_view', $data);
         echo view('templates/footer');
@@ -57,7 +57,49 @@ class Producto extends BaseController{
             'valoracion'=>$this->vmodel
         ];
         return $data;
-            
-    }
-}
 
+    }
+    public function create(){
+
+        if($this->request->getMethod() === 'post' && $this->validate([
+            'usario' => 'required',
+            'email' => 'required',
+            'pass' => 'required'
+        ])){
+
+            $this->model->save([
+                'Username' => $this->request->getPost('usuario'),
+                'Email' => $this->request->getPost('email'),
+                'Contrasena' => $this->request->getPost('pass'),
+            ]);
+
+            echo view('users/success');
+        }else{
+
+            echo view('templates/header', ['title' => 'Create a new User']);
+            echo view('users/create');
+            echo view('templates/footer');
+        }
+        public function create(){
+
+            if($this->request->getMethod() === 'post' && $this->validate([
+                'nombre' => 'required',
+                'descripcion' => 'required',
+                'imagen' => 'required'
+                ])){
+
+                $this->model->save([
+                    'Nombre' => $this->request->getPost('nombre'),
+                    'Descripcion' => $this->request->getPost('descripcion'),
+                    'Imagen' => $this->request->getPost('imagen'),
+                ]);
+
+                echo view('productos/success');
+            }else{
+
+                echo view('templates/header', ['title' => 'Create a new User']);
+                echo view('productos/productoCreate');
+                echo view('templates/footer');
+            }
+
+}
