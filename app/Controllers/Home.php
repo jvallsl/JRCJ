@@ -7,7 +7,7 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		$model = new ProductoModel();
+        $model = new ProductoModel();
         $vmodel = new ValoracionModel();
         $data = [
             'producto' => $model->getAllProductos(),

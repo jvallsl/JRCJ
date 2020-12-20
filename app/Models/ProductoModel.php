@@ -36,4 +36,24 @@ class ProductoModel extends Model{
             return $productos_seccion;
         }
         
+         public function updateProduct($id, $name, $description){
+            
+            $data = [
+                'Nombre' => $name];
+            $des = [
+                'Descripcion' => $description];
+
+            $this->builder()->where('ProductoId', $id);
+            $this->builder()->update($data);
+            $this->builder()->where('ProductoId', $id);
+            $this->builder()->update($des);
+
+        }
+        public function eraseProduct($id){
+            
+            $this->builder()->where('ProductoId',  $id);
+            $this->builder()->delete();
+
+        }
+        
     }
