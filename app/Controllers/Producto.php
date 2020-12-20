@@ -61,27 +61,6 @@ class Producto extends BaseController{
     }
     public function create(){
 
-        if($this->request->getMethod() === 'post' && $this->validate([
-            'usario' => 'required',
-            'email' => 'required',
-            'pass' => 'required'
-        ])){
-
-            $this->model->save([
-                'Username' => $this->request->getPost('usuario'),
-                'Email' => $this->request->getPost('email'),
-                'Contrasena' => $this->request->getPost('pass'),
-            ]);
-
-            echo view('users/success');
-        }else{
-
-            echo view('templates/header', ['title' => 'Create a new User']);
-            echo view('users/create');
-            echo view('templates/footer');
-        }
-        public function create(){
-
             if($this->request->getMethod() === 'post' && $this->validate([
                 'nombre' => 'required',
                 'descripcion' => 'required',
@@ -97,9 +76,10 @@ class Producto extends BaseController{
                 echo view('productos/success');
             }else{
 
-                echo view('templates/header', ['title' => 'Create a new User']);
+                echo view('templates/header', ['title' => 'Create a new Product']);
                 echo view('productos/productoCreate');
                 echo view('templates/footer');
             }
+    }
 
 }
