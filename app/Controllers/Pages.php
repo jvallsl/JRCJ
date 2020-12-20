@@ -20,6 +20,8 @@ class Pages extends Controller{
         echo view('templates/header', $data);
         echo view('pages/'.$page, $data);
         echo view('templates/footer', $data);
+echo "papusthegreat";
+
     }
 }
 ?>
