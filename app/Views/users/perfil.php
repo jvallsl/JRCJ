@@ -14,11 +14,13 @@
                 <p><?= session('Username'); ?></p>
             </div>
             <div class="perfil_salir">
-                <p>Salir</p>
+                <p><a href="/">Salir</a></p>
             </div>
+            <?php if(session('Admin') == 1 ): ?>
             <div class="perfil_admin">
                 <p>Admin</p>
             </div>
+            <?php endif; ?>
             
             <div class="perfil_usuario_datos">
                 <p>Experiencia: <?= session('Experiencia'); ?></p>
