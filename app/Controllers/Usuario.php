@@ -77,7 +77,7 @@ class Usuario extends BaseController{
                 return redirect()->to('/');
 
             }else{
-                echo "No existe";
+                echo "El usuario No existe";
             }
         }
 
