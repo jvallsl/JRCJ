@@ -4,6 +4,7 @@
     use App\Models\UserModel;
     use CodeIgniter\Controller;
     use CodeIgniter\Model;
+    use DateTime;
 
 class Usuario extends BaseController{
 
@@ -73,9 +74,9 @@ class Usuario extends BaseController{
             $user = $this->model->login($userName, $password);
 
             if(isset($user)){
-
+                $this->actualizarExperiencia($user['Valoraciones'], $user['Registro'], $user['UsuarioId']);
                 return redirect()->to('/');
-
+                
             }else{
                 echo "El usuario No existe";
             }
@@ -120,6 +121,54 @@ class Usuario extends BaseController{
                 session()->destroy();
                 return redirect()->to('/');
             }
+        }
+    }
+
+
+    public function comprobarValoraciones($valoraciones){
+
+        if($valoraciones <= 25){
+            return 'principiante';
+        }elseif($valoraciones >=26 and $valoraciones <= 50){
+            return 'intermedio';
+
+        }else{
+            return 'experto';
+        }
+
+    }
+
+    public function comprobarAntiguedad($fecha_registro){
+        $registro = new DateTime($fecha_registro);
+        $fecha_actual = new DateTime('now');
+        $antiguedad = $fecha_actual->diff($registro);
+        $antiguedad->format('%d');
+        if($antiguedad->days <= 180){
+            return "principiante";
+        }elseif($antiguedad->days >= 181 and $antiguedad->days <= 730 ){
+            return 'intermedio';
+        }else {
+            return 'experto';
+        }
+        
+    }
+
+    public function actualizarExperiencia($valoraciones, $fecha_registro, $usuarioId){
+
+        $exp_valoracion = $this->comprobarValoraciones($valoraciones);
+        $exp_antiguedad = $this->comprobarAntiguedad($fecha_registro);
+
+
+        if($exp_valoracion == 'intermedio' and $exp_antiguedad == 'intermedio'){
+
+            $experiencia = 'Intermedio';
+            $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+            return;
+
+        }elseif($exp_valoracion == 'experto' and $exp_antiguedad == 'experto'){
+            $experiencia = 'Experto';
+            $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+
         }
     }
 }
