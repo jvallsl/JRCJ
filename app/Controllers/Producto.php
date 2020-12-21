@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use App\Controllers\Comentario;
 use App\Models\ProductoModel;
 use App\Models\ValoracionModel;
 use CodeIgniter\Controller;
@@ -8,33 +9,22 @@ class Producto extends BaseController{
 
     private $model;
     private $vmodel;
+    private $c_controller;
+
 
     public function __construct()
     {
         $this->model = new ProductoModel();
         $this->vmodel = new ValoracionModel();
+        $this->c_controller = new Comentario();
     }
-
-    // public function index(){
-
-    //     $data = [
-    //         'producto' => $this->model->getAllProductos(),
-    //         'valoracion'=>$this->vmodel
-    //     ];
-
-    //     if(session('Username') != null){
-    //         echo view('templates/header_loged');
-    //     }else{
-    //         echo view('templates/header');
-    //     }
-    //     echo view('productos/productos', $data);
-    //     echo view('templates/footer');
-    // }
 
     public function view($productoId = NULL){
         $data= [
             'producto' => $this->model->getProducto($productoId),
-            'valoracion' => $this->vmodel
+            'valoracion' => $this->vmodel,
+            'comentario' => $this->c_controller->obtenerComentariosProducto($productoId)
+
         ];
 
         if(empty($data['producto'])){
@@ -59,47 +49,27 @@ class Producto extends BaseController{
         return $data;
 
     }
-    public function create(){
+   
+    // public function create(){
 
-        if($this->request->getMethod() === 'post' && $this->validate([
-            'usario' => 'required',
-            'email' => 'required',
-            'pass' => 'required'
-        ])){
+    //     if($this->request->getMethod() === 'post' && $this->validate([
+    //         'nombre' => 'required',
+    //         'descripcion' => 'required',
+    //         'imagen' => 'required'
+    //         ])){
 
-            $this->model->save([
-                'Username' => $this->request->getPost('usuario'),
-                'Email' => $this->request->getPost('email'),
-                'Contrasena' => $this->request->getPost('pass'),
-            ]);
+    //         $this->model->save([
+    //             'Nombre' => $this->request->getPost('nombre'),
+    //             'Descripcion' => $this->request->getPost('descripcion'),
+    //             'Imagen' => $this->request->getPost('imagen'),
+    //         ]);
 
-            echo view('users/success');
-        }else{
+    //         echo view('productos/success');
+    //     }else{
 
-            echo view('templates/header', ['title' => 'Create a new User']);
-            echo view('users/create');
-            echo view('templates/footer');
-        }
-        public function create(){
-
-            if($this->request->getMethod() === 'post' && $this->validate([
-                'nombre' => 'required',
-                'descripcion' => 'required',
-                'imagen' => 'required'
-                ])){
-
-                $this->model->save([
-                    'Nombre' => $this->request->getPost('nombre'),
-                    'Descripcion' => $this->request->getPost('descripcion'),
-                    'Imagen' => $this->request->getPost('imagen'),
-                ]);
-
-                echo view('productos/success');
-            }else{
-
-                echo view('templates/header', ['title' => 'Create a new User']);
-                echo view('productos/productoCreate');
-                echo view('templates/footer');
-            }
+    //         echo view('templates/header', ['title' => 'Create a new User']);
+    //         echo view('productos/productoCreate');
+    //         echo view('templates/footer');
+    //     }
 
 }
