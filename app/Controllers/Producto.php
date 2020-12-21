@@ -49,27 +49,27 @@ class Producto extends BaseController{
         return $data;
 
     }
-   
-    // public function create(){
+    public function create(){
 
-    //     if($this->request->getMethod() === 'post' && $this->validate([
-    //         'nombre' => 'required',
-    //         'descripcion' => 'required',
-    //         'imagen' => 'required'
-    //         ])){
+            if($this->request->getMethod() === 'post' && $this->validate([
+                'nombre' => 'required',
+                'descripcion' => 'required',
+                'imagen' => 'required'
+                ])){
 
-    //         $this->model->save([
-    //             'Nombre' => $this->request->getPost('nombre'),
-    //             'Descripcion' => $this->request->getPost('descripcion'),
-    //             'Imagen' => $this->request->getPost('imagen'),
-    //         ]);
+                $this->model->save([
+                    'Nombre' => $this->request->getPost('nombre'),
+                    'Descripcion' => $this->request->getPost('descripcion'),
+                    'Imagen' => $this->request->getPost('imagen'),
+                ]);
 
-    //         echo view('productos/success');
-    //     }else{
+                echo view('productos/success');
+            }else{
 
-    //         echo view('templates/header', ['title' => 'Create a new User']);
-    //         echo view('productos/productoCreate');
-    //         echo view('templates/footer');
-    //     }
+                echo view('templates/header', ['title' => 'Create a new Product']);
+                echo view('productos/productoCreate');
+                echo view('templates/footer');
+            }
+    }
 
 }
