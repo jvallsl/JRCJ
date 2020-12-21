@@ -26,7 +26,7 @@
                 <p>Experiencia: <?= session('Experiencia'); ?></p>
                 <p></p>
                 <p>Fecha de Registro: <?= session('Registro'); ?></p> 
-                <p>Valoraciones: <?= session('valoraciones'); ?></p> 
+                <p>Valoraciones: <?= session('Valoraciones'); ?></p> 
             </div>
         </div>
 
