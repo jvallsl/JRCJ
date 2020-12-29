@@ -105,17 +105,17 @@
 
 
 
-        // public function get($UsuarioId = null)
-        //   {
-        //       if ($UsuarioId === null)
-        //       {
-        //           return $this->findAll();
-        //       }
+         public function get($UsuarioId = null)
+          {
+              if ($UsuarioId === null)
+              {
+                  return $this->findAll();
+              }
 
-        //       return $this->asArray()
-        //                   ->where(['UsuarioId' => $UsuarioId])
-        //                   ->first();
-        //   }
+              return $this->asArray()
+                          ->where(['UsuarioId' => $UsuarioId])
+                          ->first();
+          }
     }
 
 ?>
