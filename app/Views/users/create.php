@@ -3,8 +3,8 @@
 <?= \Config\Services::validation()->listErrors(); ?>
 <section>
   <br><br>
-  <form id="formulario" action="/users/create" method="POST">
-      <?= csrf_field() ?>
+  <form id="formulario" action="create" method="POST">
+     
     <table id="tabla">
       <tr class="usuario">
         <td>
