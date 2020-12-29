@@ -27,7 +27,18 @@
                 <p></p>
                 <p>Fecha de Registro: <?= session('Registro'); ?></p> 
                 <p>Valoraciones: <?= session('Valoraciones'); ?></p> 
+                <p>Administrador: <?= session('Admin'); ?></p>
             </div>
+        </div>
+        <div>
+            <?php  if(session('Admin') == 1){ ?>
+                <form action="create">
+                    <input type="submit" value="Crear Usuario" />
+                </form>
+                <form action="/productos/productoCreate">
+                    <input type="submit" value="Crear Producto" />
+                </form>
+            <?php }  ?>
         </div>
 
         <div id="form-sesion" class="container_form">
