@@ -1,33 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech&display=swap');
+:root{
+    --sombra_clara:rgba(255,255,255,0.5);
+    --sobra_oscura:rgba(70,70,70,0.12);
+}
+
+
 .container{
     width: 90vw;
-    margin: auto;
+    margin: 5vh auto;
+}
+.perfil_salir{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;    
+}
+.btn_salir{
+    text-decoration: none;
+    padding: 1% 5vw;
+    color: rgba(175, 175, 175, 0.8);
+    cursor: pointer;
+    border: solid thin rgb(240, 240, 240);
+    border-radius: 5em;
+    box-shadow:
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.2rem;
+}
+
+.btn_salir:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+    color:rgba(114, 200, 200, 1)
+}
+
+.btn_salir:active{
+    box-shadow:
+    inset -10px -10px 15px rgba(255,255,255,0.5),
+    inset 10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
 }
 
 .container_perfil{
     display: grid;
-    grid-template-columns: repeat(2, 45vw);
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, auto);
+    width: 80%;
+    margin: 5vh auto;
+    padding: 1% 5%;
+    border: solid thin rgb(240, 240, 240);
+    box-shadow:
+     -10px -10px 15px rgba(255,255,255,0.5),
+     10px 10px 15px rgba(70,70,70,0.12);
+     font-family: 'Share Tech', sans-serif;
 }
 
 .perfil_usuario_nombre{
     grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-.perfil_salir{
-    grid-column: 2/3;
     grid-row: 1/2;
 }
 
 .perfil_admin{
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+}
+
+.btn_admin{
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 5% 5vw;
+    color: rgba(175, 175, 175, 0.8);
+    cursor: pointer;
+    border: solid thin rgb(240, 240, 240);
+    border-radius: 5em;
+    box-shadow:
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+}
+.btn_admin:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+    color:rgba(114, 200, 200, 1)
+}
+
+.btn_admin:active{
+    box-shadow:
+    inset -10px -10px 15px rgba(255,255,255,0.5),
+    inset 10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
 }
 
 .perfil_usuario_datos{
     grid-column: 1/3;
-    grid-row: 3/4;
+    grid-row: 2/3;
     display: grid;
-    grid-template-columns: repeat(2, 45vw);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, auto);;
+}
+.perfil_usuario_datos p{
+    display: inline;
+    font-size: 1.4rem;
+}
+.username{
+    display: inline;
+    font-size: 5rem;
+}
+.valoracion{
+    align-self: flex-start;
+    justify-self: center;
+}
+
+
+.container_form{
+    width: 80%;
+    margin: auto;
+  
+}
+.formulario_sesion{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+input[type=text], input[type=email], input[type=password]{
+    width: 60%;
+    margin: 2vh auto;
+    font-size: 1.5rem;
+    text-align: center;
+    border:none;
+    border-bottom: solid thin  rgba(175, 175, 175, 1);
+    padding: 0 5%;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.btn_modificar{
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0.5vh 2.5vw;
+    color: rgba(175, 175, 175, 0.8);
+    cursor: pointer;
+    border: solid thin rgb(240, 240, 240);
+    border-radius: 5em;
+    box-shadow:
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+}
+
+.btn_modificar:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+    color:rgba(114, 200, 200, 1)
+}
+
+.btn_eliminar{
+    margin: 10vh auto;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0.5vh 8.5vw;
+    color: rgba(175, 175, 175, 1);
+    cursor: pointer;
+    border: solid thin rgba(196, 0, 0, 0.3);
+    border-radius: 5em;
+    box-shadow:
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+    background-color: rgba(196, 0, 0, 0.3);
+}
+
+.btn_eliminar:hover{
+    background-color: rgba(196, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 1);
 }
