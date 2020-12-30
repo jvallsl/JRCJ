@@ -21,6 +21,13 @@
             ->first();
         }
 
+
+        public function getUser($userId){
+            return $this->asArray()
+            ->where(['UsuarioId' => $userId])
+            ->first();
+        }
+
         public function login($userName, $password){
 
             $datos_usuario = $this->asArray()
@@ -116,6 +123,29 @@
                           ->where(['UsuarioId' => $UsuarioId])
                           ->first();
           }
+       public function updateUser($id, $Experiencia, $Activo, $Administrador){
+        
+        $data = [
+            'Experiencia' => $Experiencia];
+        $des = [
+            'Activo' => $Activo];
+        $admin = [
+            'Administrador' => $Administrador];
+
+        $this->builder()->where('UsuarioId', $id);
+        $this->builder()->update($data);
+        $this->builder()->where('UsuarioId', $id);
+        $this->builder()->update($des);
+        $this->builder()->where('UsuarioId', $id);
+        $this->builder()->update($admin);
+        }
+
+        public function eraseUser($id){
+            
+            $this->builder()->where('UsuarioId',  $id);
+            $this->builder()->delete();
+
+        }
     }
 
 ?>
