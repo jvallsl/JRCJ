@@ -35,7 +35,7 @@
                 <form action="create">
                     <input type="submit" value="Crear Usuario" />
                 </form>
-                <form action="/productos/productoCreate">
+                <form action="/producto/create">
                     <input type="submit" value="Crear Producto" />
                 </form>
             <?php }  ?>
