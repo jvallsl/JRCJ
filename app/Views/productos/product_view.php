@@ -81,8 +81,8 @@
 
     <?php foreach($comentario as $comentario_item): ?>
         <div class="comentario">
-            <p><?= esc(strftime('%d/%m/%Y', strtotime($comentario_item['Fecha']))) ?></p>
-            <p><?= esc($comentario_item['Contenido']) ?></p>
+            <p class="fecha_comentario"><?= esc(strftime('%d/%m/%Y', strtotime($comentario_item['Fecha']))) ?></p>
+            <p class="texto_comentario"><?= esc($comentario_item['Contenido']) ?></p>
         </div>
     <?php endforeach; ?>
     
