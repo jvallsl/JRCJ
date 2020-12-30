@@ -2,7 +2,7 @@
     
     use App\Models\ValoracionModel;
     use Exception;
-use phpDocumentor\Reflection\Types\Null_;
+
 
 class Valoracion extends BaseController{
 
@@ -23,8 +23,8 @@ class Valoracion extends BaseController{
                         'ProductoId' => $productoId,
                         'Puntuacion' => $puntuacion
                     ]);
-
-                    echo json_encode('ok');   
+                    
+                    echo json_encode('ok');  
                 }catch(Exception $e){
                     echo 'Excepción capturada: ',  $e->getMessage(), "\n";
                 }

@@ -2,6 +2,7 @@
 
 use App\Models\ProductoModel;
 use App\Models\ValoracionModel;
+use App\Controllers\Usuario;
 
 class Home extends BaseController
 {
@@ -27,10 +28,10 @@ class Home extends BaseController
     /*¡¡¡¡¡¡¡   ELIMINAR CUANDO ACABE EL PROYECTO    !!!!!!!!!!!*/
 
     public function pruebas(){
-        $vmodel = new ValoracionModel();
-        $valoraciones = $vmodel->getValoraciones(2);
-
-        var_dump($valoraciones);
+        $vmodel = new Usuario();
+        // $fecha = $vmodel->actualizarExperiencia(session('Valoraciones'), session('Registro'), 
+        // session('UsuarioId'),session('Experiencia'));
+        
 
     }
 

@@ -56,6 +56,7 @@
                     </div>
                 
                     <input type="hidden" name="usuarioId" value=<?= session('UsuarioId') ?>>
+                    <input type="hidden" name="experiencia" value=<?= session('Experiencia') ?>>
                     <input type="hidden" name="productoId" value=<?= $producto['ProductoId']; ?>>
 
                 </form>
@@ -94,9 +95,7 @@
     let votaciones = document.getElementById('votaciones');
 
     formulario.addEventListener('change', function(e){
-     
         let datos = new FormData(formulario);
-
         fetch('/valoracion',{
             method: 'POST',
             body: datos
