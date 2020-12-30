@@ -9,43 +9,33 @@
 </head>
 <body>
     <div class="container">
+        <div class="perfil_salir">
+            <a class ="btn_salir" href="/">Salir</a>
+        </div>
         <div class="container_perfil">
             <div class="perfil_usuario_nombre">
-                <p><?= session('Username'); ?></p>
+                <p class="username"><?= session('Username'); ?></p>
             </div>
-            <div class="perfil_salir">
-                <p><a href="/">Salir</a></p>
-            </div>
+
             <?php if(session('Admin') == 1 ): ?>
             <div class="perfil_admin">
-                <p>Admin</p>
+                <a class ="btn_admin" href="/">Administración</a>
             </div>
-            <?php endif; ?>
-            
+            <?php endif; ?>  
             <div class="perfil_usuario_datos">
-                <p>Experiencia: <?= session('Experiencia'); ?></p>
+                <p class="exp">Experiencia: <?= session('Experiencia'); ?></p>
                 <p></p>
-                <p>Fecha de Registro: <?= session('Registro'); ?></p> 
-                <p>Valoraciones: <?= session('Valoraciones'); ?></p> 
-                <p>Administrador: <?= session('Admin'); ?></p>
+                <p class="fecha">Fecha de Registro: <?= session('Registro'); ?></p> 
+                <p class="valoracion">Valoraciones: <?= session('Valoraciones'); ?></p> 
             </div>
         </div>
-        <div>
-            <?php  if(session('Admin') == 1){ ?>
-                <form action="create">
-                    <input type="submit" value="Crear Usuario" />
-                </form>
-                <form action="/producto/create">
-                    <input type="submit" value="Crear Producto" />
-                </form>
-            <?php }  ?>
-        </div>
+
 
         <div id="form-sesion" class="container_form">
             <form class="formulario_sesion" method="POST" action="userUpdate">
                 <input type="text" id="username" name="username" placeholder="<?= session('Username'); ?>" value="" autocomplete="off" required>
                 <input type="hidden" id="usuarioId" name="usuarioId" value="<?= session('UsuarioId');?>">
-                <input type="submit" value="Modificar">
+                <input type="submit" class="btn_modificar" value="Modificar">
             </form>
         </div>
 
@@ -53,7 +43,7 @@
             <form class="formulario_sesion" method="POST" action="userUpdate">
                 <input type="email" id="email" name="email" placeholder="<?= session('Email'); ?>" value="" autocomplete="off" required>
                 <input type="hidden" id="usuarioId" name="usuarioId" value="<?= session('UsuarioId');?>">
-                <input type="submit" value="Modificar">
+                <input type="submit" class="btn_modificar" value="Modificar">
             </form>
         </div>
 
@@ -61,7 +51,7 @@
             <form class="formulario_sesion" method="POST" action="userUpdate">
                 <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" value="" required>
                 <input type="hidden" id="usuarioId" name="usuarioId" value="<?= session('UsuarioId');?>">
-                <input type="submit" value="Modificar">
+                <input type="submit" class="btn_modificar" value="Modificar">
             </form>
         </div>
 
@@ -69,12 +59,21 @@
             <form class="formulario_sesion" method="POST" action="userUpdate">
                 <input type="hidden" id="estadoUsuario" name="estadoUsuario" value=0>
                 <input type="hidden" id="usuarioId" name="usuarioId" value="<?= session('UsuarioId');?>">
-                <input type="submit" value="Eliminar Cuenta">
+                <input type="submit" class="btn_eliminar" value="Eliminar Cuenta">
             </form>
         </div>
     </div>
     
-   
+    <div>
+        <?php  if(session('Admin') == 1){ ?>
+            <form action="create">
+                <input type="submit" value="Crear Usuario" />
+            </form>
+            <form action="/producto/create">
+                <input type="submit" value="Crear Producto" />
+            </form>
+        <?php }  ?>
+    </div>
 
 
 </body>
