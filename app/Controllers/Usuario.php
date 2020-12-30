@@ -45,7 +45,7 @@ class Usuario extends BaseController{
     public function create(){
 
         if($this->request->getMethod() === 'post' && $this->validate([
-            'usario' => 'required',
+            'usuario' => 'required',
             'email' => 'required',
             'pass' => 'required'
         ])){
