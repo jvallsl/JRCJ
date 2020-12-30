@@ -74,7 +74,7 @@ class Usuario extends BaseController{
             $user = $this->model->login($userName, $password);
 
             if(isset($user)){
-                $this->actualizarExperiencia($user['Valoraciones'], $user['Registro'], $user['UsuarioId']);
+                $this->actualizarExperiencia($user['Valoraciones'], $user['Registro'], $user['UsuarioId'], $user['Experiencia']);
                 return redirect()->to('/');
                 
             }else{
@@ -127,13 +127,13 @@ class Usuario extends BaseController{
 
     public function comprobarValoraciones($valoraciones){
 
-        if($valoraciones <= 25){
-            return 'principiante';
-        }elseif($valoraciones >=26 and $valoraciones <= 50){
+        if($valoraciones >= 25 and $valoraciones <= 50){
             return 'intermedio';
 
-        }else{
+        }elseif($valoraciones > 50){
             return 'experto';
+        }else{
+            return;
         }
 
     }
@@ -143,32 +143,37 @@ class Usuario extends BaseController{
         $fecha_actual = new DateTime('now');
         $antiguedad = $fecha_actual->diff($registro);
         $antiguedad->format('%d');
-        if($antiguedad->days <= 180){
-            return "principiante";
-        }elseif($antiguedad->days >= 181 and $antiguedad->days <= 730 ){
+        if($antiguedad->days >= 181 and $antiguedad->days <= 730 ){
             return 'intermedio';
-        }else {
+        }elseif($antiguedad->days > 730) {
             return 'experto';
+        }else{
+            return;
         }
         
     }
 
-    public function actualizarExperiencia($valoraciones, $fecha_registro, $usuarioId){
+    public function actualizarExperiencia($valoraciones, $fecha_registro, $usuarioId, $experiencia_actual){
 
         $exp_valoracion = $this->comprobarValoraciones($valoraciones);
         $exp_antiguedad = $this->comprobarAntiguedad($fecha_registro);
 
+        if($experiencia_actual == 'Principiante'){
+            if($exp_valoracion == 'intermedio' or $exp_valoracion == 'experto' and $exp_antiguedad == 'intermedio' or $exp_antiguedad == 'experto'){
 
-        if($exp_valoracion == 'intermedio' and $exp_antiguedad == 'intermedio'){
-
-            $experiencia = 'Intermedio';
-            $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
-            return;
-
-        }elseif($exp_valoracion == 'experto' and $exp_antiguedad == 'experto'){
-            $experiencia = 'Experto';
-            $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
-
+                $experiencia = 'Intermedio';
+                $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+                return;
+            }
         }
+     
+        if($experiencia_actual == 'Intermedio'){
+            if($exp_valoracion == 'experto' and $exp_antiguedad == 'experto'){
+                $experiencia = 'Experto';
+                $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+    
+            }
+        }
+
     }
 }
