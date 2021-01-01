@@ -29,7 +29,8 @@ class Admin extends BaseController
     public function update()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         $db = new \App\Models\ProductoModel();
         $product = $db->getProducto($id);
         $data['producto'] = $product; 
@@ -52,8 +53,13 @@ class Admin extends BaseController
     }
     public function erase()
     {
+
+        
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+
+        
+        $id = $arr[1];
         
 
         $db = new \App\Models\ProductoModel();
@@ -88,7 +94,8 @@ class Admin extends BaseController
     public function update_user()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         $db = new \App\Models\UserModel();
         $user = $db->getUser($id);
         $data['usuario'] = $user; 
@@ -114,8 +121,10 @@ class Admin extends BaseController
 
     public function erase_user()
     {
+
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         
 
         $db = new \App\Models\UserModel();

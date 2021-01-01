@@ -25,8 +25,8 @@
 	    				<th><?php echo $user['Experiencia']; ?></th>
 	    				<th><?php echo $user['Activo']; ?></th>
 	    				<th><?php echo $user['Administrador']; ?></th>
-	    				<th><a href="<?php echo base_url('admin/update_user/'.$user['UsuarioId'])?>" >Update</a></th>
-	    				<th><a href="<?php echo base_url('admin/erase_user/'.$user['UsuarioId']);?>" >Erase</a></th>
+	    				<th><a href="<?php echo base_url('admin/update_user/='.$user['UsuarioId'])?>" >Update</a></th>
+	    				<th><a href="<?php echo base_url('admin/erase_user/='.$user['UsuarioId']);?>" >Erase</a></th>
 				    </tr>
 				<?php endforeach; ?>
 		</table>
