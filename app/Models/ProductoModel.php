@@ -6,7 +6,7 @@ class ProductoModel extends Model{
 
         protected $table = 'producto';
         protected $primaryKey = 'ProductoId';
-        protected $allowedField = ['Nombre', 'Descripcion', 'Imagen', 'SeccionId'];
+        protected $allowedFields = ['Nombre', 'Descripcion', 'Imagen', 'SeccionId'];
         protected $returnType = 'object';
 
         public function getAllProductos(){
