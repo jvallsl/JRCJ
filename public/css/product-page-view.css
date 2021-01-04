@@ -121,7 +121,6 @@
     grid-template-rows: 10% 90%;
     border: solid thin rgba(158, 158, 158, 0.5)  ;
     background: rgba(158, 158, 158, 0.3);
-    row-gap: 2vh;
     width: 90%;
     padding: 2% 5%;
     font-family: 'Share Tech', sans-serif;
@@ -141,4 +140,57 @@
     background: rgba(255, 255, 255, 0.5);
     margin: 10vh 0;
 
+}
+
+.caja_comentario{
+    margin: 2vh auto 20vh;
+    width: 90%;
+}
+.form_comentario{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_comentario textarea{
+    height: 15vh;
+    margin-bottom: 5vh;
+    padding: 5%;
+    resize: none;
+    border: solid thin rgba(158, 158, 158, 0.5)  ;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: 'Share Tech', sans-serif;
+    font-size: 1.1rem;
+}
+
+.titulo_comentario{
+    font-size: 2vw;
+    font-family: 'Electrolize', sans-serif;
+}
+
+.btn_comentario{
+    align-self: flex-end;
+    width: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 2% 5vw;
+    color: rgba(175, 175, 175, 0.8);
+    cursor: pointer;
+    border: solid thin rgb(240, 240, 240);
+    border-radius: 5em;
+    box-shadow:
+    -10px -10px 15px var(--sombra_clara),
+    10px 10px 15px var(--sobra_oscura);
+    font-family: 'Electrolize', sans-serif;
+}
+
+.btn_comentario:hover{
+    border: solid thin rgba(114, 246, 255, 0.65);
+    color:rgba(114, 200, 200, 1)
+}
+
+.btn_comentario:active{
+    box-shadow:
+    inset -10px -10px 15px rgba(255,255,255,0.5),
+    inset 10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
 }
