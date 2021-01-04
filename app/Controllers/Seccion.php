@@ -19,8 +19,12 @@ class Seccion extends BaseController{
             'producto' => $this->model->getProductosBySeccion($seccion),
             'valoracion'=>$this->vmodel
         ];
-
-        echo view('templates/header');
+        
+        if(session('Username') != null){
+            echo view('templates/header_loged');
+        }else{
+            echo view('templates/header');
+        }
         echo view('productos/productos_seccion', $data);
         echo view('templates/footer');
     }
