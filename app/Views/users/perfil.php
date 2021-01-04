@@ -19,7 +19,8 @@
 
             <?php if(session('Admin') == 1 ): ?>
             <div class="perfil_admin">
-                <a class ="btn_admin" href="/">Administración</a>
+                <a class ="btn_admin" href="/admin/admin_users">Usuarios</a>
+                <a class ="btn_admin" href="/admin/admin_products">Productos</a>
             </div>
             <?php endif; ?>  
             <div class="perfil_usuario_datos">
@@ -63,18 +64,6 @@
             </form>
         </div>
     </div>
-    
-    <div>
-        <?php  if(session('Admin') == 1){ ?>
-            <form action="create">
-                <input type="submit" value="Crear Usuario" />
-            </form>
-            <form action="/producto/create">
-                <input type="submit" value="Crear Producto" />
-            </form>
-        <?php }  ?>
-    </div>
-
 
 </body>
 </html>
