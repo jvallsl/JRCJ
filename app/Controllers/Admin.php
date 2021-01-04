@@ -12,24 +12,19 @@ class Admin extends BaseController
 
     public function admin_products()
     {
-         if(session('Username') != null){
-            echo view('templates/header_loged');
-        }else{
-            echo view('templates/header');   
-        }
-
         $db = new \App\Models\ProductoModel();
         $products = $db->getAllProductos();
         //var_dump($products);
         $data['productos'] = $products; 
-        echo view('pages/admin_products', $data);
+        echo view('productos/admin_productos', $data);
         echo view('templates/footer');
     }
 
     public function update()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         $db = new \App\Models\ProductoModel();
         $product = $db->getProducto($id);
         $data['producto'] = $product; 
@@ -46,41 +41,39 @@ class Admin extends BaseController
         $products = $db->getAllProductos();
         //var_dump($products);
         $data['productos'] = $products;
-        return view('pages/admin_products', $data);
+        return view('productos/admin_productos', $data);
 
 
     }
     public function erase()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
-        
+        $arr = explode("=", $actual_link, 2);
+
+
+        $id = $arr[1];
+
 
         $db = new \App\Models\ProductoModel();
         $db->eraseProduct($id);
         $products = $db->getAllProductos();
         //var_dump($products);
         $data['productos'] = $products;
-        return view('pages/admin_products', $data);
+        return view('productos/admin_productos', $data);
 
 
     }
 
     public function admin_users()
     {
-         if(session('Username') != null){
-            echo view('templates/header_loged');
-        }else{
-            echo view('templates/header');   
-        }
-
+ 
         $db = new \App\Models\UserModel();
         $usuarios = $db->getUsers();
 
         //var_dump($usuarios);
         //var_dump($products);
         $data['usuarios'] = $usuarios; 
-        echo view('pages/admin_users', $data);
+        echo view('users/admin_users', $data);
         echo view('templates/footer');
     }
 
@@ -88,7 +81,8 @@ class Admin extends BaseController
     public function update_user()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         $db = new \App\Models\UserModel();
         $user = $db->getUser($id);
         $data['usuario'] = $user; 
@@ -107,7 +101,7 @@ class Admin extends BaseController
         $users = $db->getUsers();
         //var_dump($products);
         $data['usuarios'] = $users;
-        return view('pages/admin_users', $data);
+        return view('users/admin_users', $data);
 
 
     }
@@ -115,7 +109,8 @@ class Admin extends BaseController
     public function erase_user()
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $id = substr($actual_link, -1);
+        $arr = explode("=", $actual_link, 2);
+        $id = $arr[1];
         
 
         $db = new \App\Models\UserModel();
@@ -123,8 +118,13 @@ class Admin extends BaseController
         $users = $db->getUsers();
         //var_dump($products);
         $data['usuarios'] = $users;
-        return view('pages/admin_users', $data);
+        return view('users/admin_users', $data);
 
+    }
+
+    public function admin_view(){
+
+        echo view('users/admin_view');
     }
     
 
