@@ -18,8 +18,6 @@
                 <p>Urban Move</p>
             </div>
             <div class="controles">
-                <a  style="text-decoration:none;color:black; float:left;" href=<?=base_url("admin/admin_products");?>>Administrar Productos</a>
-                <a  style="text-decoration:none;color:black; float:left;" href=<?=base_url("admin/admin_users");?>>Administrar Usuarios</a>
                 <a class=" enlace_registro" href="/usuario/perfil" title="Perfil">
                     <svg class="new_user" width="25" viewBox="0 0 512 512">
                         <path d="M312,392h48v48a8,8,0,0,0,16,0V392h48a8,8,0,0,0,0-16H376V328a8,8,0,0,0-16,0v48H312a8,8,0,0,0,0,16Z"/>
