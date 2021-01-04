@@ -69,12 +69,13 @@
     </div>
 
     <?php if(session('UsuarioId') != NULL): ?>
-        <div class="">
-            <form method="POST" action="<?= base_url("/comentario/guardarComentarios")?>">
+        <div class="caja_comentario">
+            <p class="titulo_comentario">Añadir un Comentario:</p>
+            <form class="form_comentario" method="POST" action="<?= base_url("/comentario/guardarComentarios")?>">
                 <textarea name="contenido"></textarea>
                 <input type="hidden" name="usuarioId" value=<?= session('UsuarioId') ?>>
                 <input type="hidden" name="productoId" value=<?= $producto['ProductoId']; ?>>
-                <input type="submit" value="Comentar">
+                <input class="btn_comentario" type="submit" value="Comentar">
             </form>
         </div>
     <?php endif; ?>
