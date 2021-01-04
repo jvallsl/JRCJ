@@ -40,27 +40,20 @@ class Producto extends BaseController{
         echo view('templates/footer');
     }
 
-    public function productoBySeccion($seccion){
-
-        $data = [
-            'producto' => $this->model->getProductosBySeccion($seccion),
-            'valoracion'=>$this->vmodel
-        ];
-        return $data;
-
-    }
     public function create(){
 
             if($this->request->getMethod() === 'post' && $this->validate([
                 'nombre' => 'required',
                 'descripcion' => 'required',
-                'imagen' => 'required'
+                'imagen' => 'required',
+                'seccion' => 'required'
                 ])){
 
                 $this->model->save([
                     'Nombre' => $this->request->getPost('nombre'),
                     'Descripcion' => $this->request->getPost('descripcion'),
                     'Imagen' => $this->request->getPost('imagen'),
+                    'SeccionId' => $this->request->getPost('seccion')
                 ]);
 
                 echo view('productos/success');
