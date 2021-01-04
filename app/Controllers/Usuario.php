@@ -22,8 +22,7 @@ class Usuario extends BaseController{
             'title' => 'Usuarios Registrados',
         ];
 
-        echo view('templates/header', $data);
-        echo view('users/overview', $data);
+        echo view('users/admin_users', $data);
         echo view('templates/footer', $data);
     }
 
