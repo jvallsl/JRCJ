@@ -15,7 +15,7 @@
     <header>
         <div class="header_container" >
             <div class="logo">
-                <p>Urban Move</p>
+                <img src="/img/logo.png">
             </div>
             <div class="controles">
                 <a class=" enlace_registro" href=<?=base_url("usuario/nuevo")?> title="Crear cuenta">

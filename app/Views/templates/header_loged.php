@@ -15,7 +15,7 @@
     <header>
         <div class="header_container" >
             <div class="logo">
-                <p>Urban Move</p>
+                <img src="/img/logo.png">
             </div>
             <div class="controles">
                 <a class=" enlace_registro" href="/usuario/perfil" title="Perfil">
@@ -25,13 +25,13 @@
                     </svg>
                     <?= session('Username'); ?>
                 </a>
-                <div id="boton-sesion" class="boton_sesion" title="Cerrar Sesión">
+                <a id="boton-sesion" href="/close" class="boton_sesion_logged" title="Cerrar Sesión">
                     <svg width="30" viewBox="0 0 512 512" id="power-on">
                         <path d="m256 0c-140.96875 0-256 115.050781-256 256 0 140.96875 115.050781 256 256 256 140.96875 0 256-115.050781 256-256 0-140.972656-115.050781-256-256-256zm0 482c-124.617188 0-226-101.382812-226-226s101.382812-226 226-226 226 101.382812 226 226-101.382812 226-226 226zm0 0"/>
                         <path d="m241 121h30v150h-30zm0 0"/>
                         <path d="m323.511719 139.070312-15.023438 25.96875c32.390625 18.734376 52.511719 53.589844 52.511719 90.960938 0 57.898438-47.101562 105-105 105s-105-47.101562-105-105c0-37.371094 20.121094-72.226562 52.511719-90.960938l-15.023438-25.96875c-41.628906 24.082032-67.488281 68.886719-67.488281 116.929688 0 74.4375 60.5625 135 135 135s135-60.5625 135-135c0-48.042969-25.859375-92.847656-67.488281-116.929688zm0 0"/>
                     </svg>
-                </div>
+                </a>
             </div>
         </div>
     </header>
