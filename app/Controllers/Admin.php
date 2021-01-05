@@ -29,7 +29,7 @@ class Admin extends BaseController
         $product = $db->getProducto($id);
         $data['producto'] = $product; 
         //var_dump($data['producto']);
-        return view('pages/updateProducto', $data);
+        return view('productos/updateProducto', $data);
     }
     public function updateProducto()
     {
@@ -87,7 +87,7 @@ class Admin extends BaseController
         $user = $db->getUser($id);
         $data['usuario'] = $user; 
         //var_dump($data['producto']);
-        return view('pages/updateUser', $data);
+        return view('users/updateUser', $data);
     }
 
     public function saveUser()
