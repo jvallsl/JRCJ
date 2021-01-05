@@ -53,6 +53,7 @@ class Usuario extends BaseController{
                 'Username' => $this->request->getPost('usuario'),
                 'Email' => $this->request->getPost('email'),
                 'Contrasena' => $this->request->getPost('pass'),
+                'Registro' => date('Y-m-d'),
             ]);
 
             echo view('users/success');
@@ -86,6 +87,11 @@ class Usuario extends BaseController{
     public function perfil(){
 
         echo view('users/perfil');
+    }
+
+    public function create_form(){
+        
+        echo view('users/user_create');
     }
 
 
