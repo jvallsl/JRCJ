@@ -112,32 +112,33 @@
 
 
 
-         public function get($UsuarioId = null)
-          {
-              if ($UsuarioId === null)
-              {
-                  return $this->findAll();
-              }
+        public function get($UsuarioId = null)
+        {
+            if ($UsuarioId === null)
+            {
+                return $this->findAll();
+            }
 
-              return $this->asArray()
-                          ->where(['UsuarioId' => $UsuarioId])
-                          ->first();
-          }
-       public function updateUser($id, $Experiencia, $Activo, $Administrador){
+            return $this->asArray()
+                        ->where(['UsuarioId' => $UsuarioId])
+                        ->first();
+        }
+
+        public function updateUser($id, $Experiencia, $Activo, $Administrador){
         
-        $data = [
-            'Experiencia' => $Experiencia];
-        $des = [
-            'Activo' => $Activo];
-        $admin = [
-            'Administrador' => $Administrador];
+            $data = [
+                'Experiencia' => $Experiencia];
+            $des = [
+                'Activo' => $Activo];
+            $admin = [
+                'Administrador' => $Administrador];
 
-        $this->builder()->where('UsuarioId', $id);
-        $this->builder()->update($data);
-        $this->builder()->where('UsuarioId', $id);
-        $this->builder()->update($des);
-        $this->builder()->where('UsuarioId', $id);
-        $this->builder()->update($admin);
+            $this->builder()->where('UsuarioId', $id);
+            $this->builder()->update($data);
+            $this->builder()->where('UsuarioId', $id);
+            $this->builder()->update($des);
+            $this->builder()->where('UsuarioId', $id);
+            $this->builder()->update($admin);
         }
 
         public function eraseUser($id){
