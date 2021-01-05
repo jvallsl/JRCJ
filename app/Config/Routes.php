@@ -41,6 +41,7 @@ $routes->get('users/(:segment)', 'Usuario::view/$1');
 $routes->get('usuario', 'Usuario::index');
 $routes->get('usuario/perfil', 'Usuario::perfil');
 $routes->get('usuario/admin', 'Admin::admin_view');
+$routes->get('usuario/nuevo', 'Usuario::create_form');
 $routes->get('producto', 'Producto::index');
 $routes->get('productos/(:segment)', 'Producto::view/$1');
 $routes->get('seccion/(:segment)', 'Seccion::index/$1');
