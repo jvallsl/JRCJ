@@ -46,6 +46,7 @@ $routes->get('producto', 'Producto::index');
 $routes->get('productos/(:segment)', 'Producto::view/$1');
 $routes->get('seccion/(:segment)', 'Seccion::index/$1');
 $routes->get('home', 'Home::index');
+$routes->get('close', 'Usuario::close_session');
 $routes->get('home/pruebas', 'Home::pruebas');  #Eliminar al terminar proyecto
 
 $routes->group('user', function($routes)
