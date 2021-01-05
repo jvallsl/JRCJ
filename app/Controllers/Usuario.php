@@ -94,6 +94,11 @@ class Usuario extends BaseController{
         echo view('users/user_create');
     }
 
+    public function close_session(){
+        session()->destroy();
+        return redirect()->to('/');
+    }
+
 
     public function userUpdate(){
 
