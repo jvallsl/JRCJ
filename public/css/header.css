@@ -16,6 +16,15 @@
     position: relative;
     margin-bottom: 5vh;
 }
+.logo{
+    width: 30%;
+    align-self: center;
+    justify-self: self-start;
+    margin-left: 10vw;
+}
+.logo img{
+    width: 100%;
+}
 .controles{
     display: flex;
     flex-direction: row;
@@ -43,10 +52,10 @@
 
 }
 .enlace_registro:hover{
-    border: solid thin rgba(114, 246, 255, 0.65);
+    border: solid thin rgba(116, 114, 255, 0.65); 
 }
 .enlace_registro:active svg{
-    fill: rgba(114, 246, 255, 1);
+    fill: rgba(116, 114, 255, 1); 
 }
 .enlace_registro:active{
     box-shadow:
@@ -68,7 +77,7 @@
     cursor: pointer;
 }
 .boton_sesion:hover{
-    border: solid thin rgba(114, 246, 255, 0.65);
+    border: solid thin rgba(116, 114, 255, 0.65); 
 }
 
 
@@ -83,6 +92,32 @@ svg{
     fill: rgba(175, 175, 175, 0.8);
 }
 
+/* Botón sesión usuario logeado */
+
+.boton_sesion_logged{
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    border-radius:  100%;
+    border: 0.1em solid rgba(116, 114, 255, 0.65); 
+    outline: none;
+    box-shadow:
+     -10px -10px 15px rgba(255,255,255,0.5),
+     10px 10px 15px rgba(70,70,70,0.12);
+    cursor: pointer;
+}
+.boton_sesion_logged:hover{
+    border: solid thin rgba(180, 28, 1, 0.65);
+}
+
+
+.boton_sesion_logged:active{
+    box-shadow:
+    inset -10px -10px 15px var(--sombra_clara),
+    inset 10px 10px 15px var(--sobra_oscura);
+    cursor: pointer;
+}
+
 /*Página Formulario Inicio de Sesión*/
 .container_form{
    display: none;
@@ -92,9 +127,9 @@ svg{
     box-shadow:
         -10px -10px 15px rgba(255, 255, 255, 0.5),
         10px 10px 15px rgba(70,70,70,0.12);
-    border-left: 0.1em solid rgba(114, 246, 255, 0.65);
-    border-right: 0.1em solid rgba(114, 246, 255, 0.65);
-    border-bottom: 0.1em solid rgba(114, 246, 255, 0.65);
+    border-left: 0.1em solid rgba(116, 114, 255, 0.65); 
+    border-right: 0.1em solid rgba(116, 114, 255, 0.65); 
+    border-bottom: 0.1em solid rgba(116, 114, 255, 0.65); 
     z-index: 4;
     position: absolute;
     left: 15vw;
@@ -113,7 +148,7 @@ svg{
     height: 5vh;
     margin: 5vh auto;
     border:none;
-    border-bottom: solid thin rgba(114, 246, 255, 0.65);
+    border-bottom: solid thin rgba(116, 114, 255, 0.65); 
     text-align: center;
     font-size: 1.3em;
     letter-spacing: 0.2em;
@@ -125,7 +160,7 @@ svg{
     width: 20%;
     height: 60%;
     background-color: white;
-    border: thin solid rgba(114, 246, 255, 0.65);
+    border: thin solid rgba(116, 114, 255, 0.65); 
     border-radius:  5em;
     box-shadow:
      -10px -10px 15px rgba(255,255,255,0.5),
@@ -145,3 +180,19 @@ svg{
     background: linear-gradient(0, rgba(114, 246, 255, 0.85),rgba(114, 246, 255, 0.65), white);
     clip-path: polygon(100% 0, 0 0, 100% 100%);
 } */
+
+
+/* FOOTER */
+
+
+.footer{
+    display: flex;
+    height: 20vh;
+    background: linear-gradient(0,white, rgba(255,255,255,0.6),rgba(255,255,255,0.2));
+    justify-content: center;
+}
+.footer p{
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.2rem;
+    align-self: center;
+}

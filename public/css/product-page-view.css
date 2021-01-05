@@ -96,13 +96,13 @@
     transition: all .2s ease;
 }
 .checkmark svg:hover{
-    fill:rgba(114, 246, 255, 0.8);
-    filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
+    fill:rgba(116, 114, 255, 0.8); 
+    filter: drop-shadow(0.1em 0.2em 0.5em rgba(116, 114, 255, 0.8) );
     cursor: pointer;
 }
 .container_radio input:checked  ~ .checkmark svg{
     transform: scale(115%);
-    filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
+    filter: drop-shadow(0.1em 0.2em 0.5em rgba(116, 114, 255, 0.8) );
     fill: rgba(114, 246, 255, 1);
 }
 
@@ -184,8 +184,8 @@
 }
 
 .btn_comentario:hover{
-    border: solid thin rgba(114, 246, 255, 0.65);
-    color:rgba(114, 200, 200, 1)
+    border: solid thin rgba(116, 114, 255, 0.65); 
+    color:rgba(116, 114, 255, 1); 
 }
 
 .btn_comentario:active{
