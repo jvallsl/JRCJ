@@ -20,7 +20,7 @@
 
         <div id="form-sesion" class="container_form">
         <?= \Config\Services::validation()->listErrors(); ?>
-            <form class="formulario_sesion" method="POST" action="usuario/create">
+            <form class="formulario_sesion" method="POST" action=<?= base_url("usuario/create")?> >
                 <input type="text" id="usuario" name="usuario" value="" autocomplete="off" placeholder="Username" required>
                 <input type="email" id="email" name="email" value="" autocomplete="off" placeholder="Email" required>
                 <input type="password" id="pass" name="pass" autocomplete="off" placeholder="Password" required>
