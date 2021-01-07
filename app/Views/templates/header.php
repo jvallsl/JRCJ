@@ -37,7 +37,7 @@
     </header>
 
     <div id="form-sesion" class="container_form">
-        <form class="formulario_sesion" method="POST" action="usuario/userLogin">
+        <form class="formulario_sesion" method="POST" action=<?= base_url("usuario/userLogin") ?>>
             <input type="text" id="username" name="username" placeholder="Username" value="" autocomplete="off">
             <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" value="">
             <input type="submit" value="Acceder">
